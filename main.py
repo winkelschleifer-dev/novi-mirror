@@ -16,6 +16,7 @@ bot = commands.Bot(
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user}")
+    print("about testing")
 
 @bot.command()
 async def about(ctx):
