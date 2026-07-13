@@ -23,7 +23,7 @@ class Fun(commands.Cog):
     await ctx.send("418: I'm a teapot")
   
   @commands.command(help="Get a very scientific and fully correct answer to your question")
-  async def 8ball(self, ctx, question):
+  async def eightball(self, ctx, question):
     answers = [
     "Certainly.",
     "Without a doubt.",
