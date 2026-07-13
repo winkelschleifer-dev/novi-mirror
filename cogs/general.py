@@ -25,5 +25,15 @@ class General(commands.Cog):
 
     await ctx.send(embed=embed)
 
-    async def setup(bot):
-      await bot.add_cog(General(bot))
+  @commands.command()
+  async def help(ctx):
+    embed=discord.Embed(
+      title="Help",
+      description="My prefix is *n!*. Commands:\nhelp - displays this page\nabout - displays basic bot info\nping - displays bot brain delay",
+      color=0xfff600
+    )
+    await ctx.send(embed=embed)
+
+  
+  async def setup(bot):
+    await bot.add_cog(General(bot))
