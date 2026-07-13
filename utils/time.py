@@ -1,4 +1,4 @@
-from datetime import timedelta
+import datetime
 
 def parse_time(time_string):
   unit = time_string[-1]
