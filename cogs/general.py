@@ -6,12 +6,12 @@ class General(commands.Cog):
     self.bot = bot
 
   @commands.command()
-  async def ping(ctx):
+  async def ping(self, ctx):
     latency = round(self.bot.latency * 1000)
     await ctx.send(f"🏓 Pong! Latency: {latency} ms")
 
   @commands.command()
-  async def about(ctx):
+  async def about(self, ctx):
     embed = discord.Embed(
       title="Novi",
       description="Custom bot for Nova's Discord community",
@@ -26,7 +26,7 @@ class General(commands.Cog):
     await ctx.send(embed=embed)
 
   @commands.command()
-  async def help(ctx):
+  async def help(self, ctx):
     embed=discord.Embed(
       title="Help",
       description="My prefix is *n!*. Commands:\nhelp - displays this page\nabout - displays basic bot info\nping - displays bot brain delay",
