@@ -2,10 +2,11 @@ from discord.ext import commands
 import discord
 
 class Fun(commands.Cog):
+  """Fun commands"""
   def __init__(self, bot):
     self.bot = bot
 
-  @commands.command()
+  @commands.command(help="Scientifically clculates how femboy someone is.")
   async def howfemboy(self, ctx, member:discord.Member = None):
     if member is None:
       member = ctx.author
