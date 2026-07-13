@@ -7,7 +7,7 @@ class Fun(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
 
-  @commands.command(help="Scientifically clculates how femboy someone is.")
+  @commands.command(help="Scientifically calculates how femboy someone is.")
   async def howfemboy(self, ctx, member:discord.Member = None):
     if member is None:
       member = ctx.author
