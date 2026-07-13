@@ -21,7 +21,7 @@ async def on_ready():
 async def about(ctx):
   embed = discord.Embed(
     title="Novi",
-    descriprion="Bot for Nova's Discord community",
+    description="Bot for Nova's Discord community",
     color=0xEA00FF
   )
   embed.add_field(
