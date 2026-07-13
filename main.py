@@ -7,9 +7,11 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 intents = discord.Intents.default()
 intents.message_content = True
 
+
 bot = commands.Bot(
     command_prefix="n!",
-    intents=intents
+    intents=intents,
+    help_command=None
 )
 
 
@@ -17,25 +19,18 @@ bot = commands.Bot(
 async def on_ready():
     print(f"Logged in as {bot.user}")
 
-@bot.command()
-async def about(ctx):
-  embed = discord.Embed(
-    title="Novi",
-    description="Bot for Nova's Discord community",
-    color=0xEA00FF
-  )
-  embed.add_field(
-    name="Novi version",
-    value="v0.1.5",
-    inline=True
-  )
-  await ctx.send(embed=embed)
+
+async def load_cogs():
+    await bot.load_extension("cogs.general")
+    #await bot.load_extension("cogs.moderation")
+    #await bot.load_extension("cogs.fun")
 
 
+async def main():
+    async with bot:
+        await load_cogs()
+        await bot.start(TOKEN)
 
-@bot.command()
-async def ping(ctx):
-    latency = round(bot.latency * 1000)
-    await ctx.send(f"🏓 Pong! Latency: {latency} ms")
 
-bot.run(TOKEN)
+import asyncio
+asyncio.run(main())
