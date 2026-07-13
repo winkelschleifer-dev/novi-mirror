@@ -20,7 +20,17 @@ async def on_ready():
 
 @bot.command()
 async def about(ctx):
-    await ctx.send("Novi - Nova community bot")
+  embed = discord.Embed(
+    title="Novi",
+    descriprion="Bot for Nova's Discord community",
+    color=0xEA00FF
+  )
+  embed.add_field(
+    name="Novi version",
+    value="v0.1.5",
+    inline=True
+  )
+    await ctx.send(embed=embed)
 
 
 
