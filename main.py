@@ -16,14 +16,6 @@ bot = commands.Bot(
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user}")
-    print("about testing")
-
-@bot.command()
-async def help(ctx):
-  embed = discord.Embed(
-    title="Commands",
-    description="Prefix is `n!`.\nhelp\nabout\nping"
-  )
 
 @bot.command()
 async def about(ctx):
@@ -46,5 +38,4 @@ async def ping(ctx):
     latency = round(bot.latency * 1000)
     await ctx.send(f"🏓 Pong! Latency: {latency} ms")
 
-print(TOKEN is not None)
 bot.run(TOKEN)
