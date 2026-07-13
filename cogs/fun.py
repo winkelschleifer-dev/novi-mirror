@@ -10,7 +10,7 @@ class Fun(commands.Cog):
   async def howfemboy(self, ctx, member:discord.Member = None):
     if member is None:
       member = ctx.author
-    elif member.id == 852565771375738890:
+    if member.id == 852565771375738890:
       percent = 9223372036854775807
     else:
       percent = member.id % 101
