@@ -19,6 +19,13 @@ async def on_ready():
     print("about testing")
 
 @bot.command()
+async def help(ctx):
+  embed = discord.Embed(
+    title="Commands",
+    description="Prefix is `n!`.\nhelp\nabout\nping"
+  )
+
+@bot.command()
 async def about(ctx):
   embed = discord.Embed(
     title="Novi",
@@ -30,7 +37,7 @@ async def about(ctx):
     value="v0.1.5",
     inline=True
   )
-    await ctx.send(embed=embed)
+  await ctx.send(embed=embed)
 
 
 
