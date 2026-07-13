@@ -7,11 +7,19 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 intents = discord.Intents.default()
 intents.message_content = True
 
+class NoviHelp(commands.DefaultHelpCommand):
+    def __init__(self):
+        super().__init__(
+            no_category="Other",
+            dm_help=False
+        )
+      
+
 
 bot = commands.Bot(
     command_prefix="n!",
     intents=intents,
-    help_command=None
+    help_command=NoviHelp()
 )
 
 
