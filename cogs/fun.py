@@ -44,6 +44,10 @@ class Fun(commands.Cog):
     else:
       await ctx.send(f"The 8ball says: {random.choice(answers)}")
 
+  @commands.command(help="Gives you a random Blåhaj image")
+  async def blahaj(self, ctx):
+    await ctx.send(file=discord.File(f'assets/blahaj/blahaj-{random.randint(1, 5)}.jpg'))
+
 
 
 
