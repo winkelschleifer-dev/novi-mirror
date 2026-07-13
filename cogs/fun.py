@@ -10,10 +10,17 @@ class Fun(commands.Cog):
   async def howfemboy(self, ctx, member:discord.Member = None):
     if member is None:
       member = ctx.author
-
-    percent = member.id % 101
+    elif member.id == 852565771375738890:
+      percent = 9223372036854775807
+    else:
+      percent = member.id % 101
 
     await ctx.send(f"{member.display_name} is {percent}% femboy")
+
+  @commands.command(help="Makes you a cup of coffee")
+  async def coffee(self, ctx):
+    await ctx.send("418: I'm a teapot")
+    
 
 
 
