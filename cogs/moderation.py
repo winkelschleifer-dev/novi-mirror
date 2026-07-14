@@ -10,20 +10,20 @@ class Moderation(commands.Cog):
 
   @commands.check(utils.rolechecks.isMod)
   @commands.command(help="Mutes a user")
-  async def mute(self, ctx, member:discord.Member, time, reason=None):
+  async def mute(self, ctx, member:discord.Member, time, *, reason=None):
     time_unformatted = utils.time.parse_time(time)
     await member.timeout(time_unformatted, reason=reason)
     await ctx.send(f"{member.display_name} was muted for {time}. Reason: {reason}")
 
   @commands.check(utils.rolechecks.isAdmin)
   @commands.command(help="Kicks a user")
-  async def kick(self, ctx, member: discord.Member, reason=None):
+  async def kick(self, ctx, member: discord.Member, *, reason=None):
     await member.kick(reason=reason)
     await ctx.send(f"{member.display_name} was kicked. Reason: {reason}")
 
   @commands.check(utils.rolechecks.isAdmin)
   @commands.command(help="Bans a user")
-  async def ban(self, ctx, member: discord.Member, reason=None):
+  async def ban(self, ctx, member: discord.Member, *, reason=None):
     await member.ban(reason=reason)
     await ctx.send(f"{member.display_name} was banned. {reason}")
 
