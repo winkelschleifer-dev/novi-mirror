@@ -21,7 +21,7 @@ class Moderation(commands.Cog):
     await member.kick(reason=reason)
     await ctx.send(f"{member.display_name} was kicked. Reason: {reason}")
 
-  @commands.check(isAdmin)
+  @commands.check(utils.rolechecks.isAdmin)
   @commands.command(help="Bans a user")
   async def ban(self, ctx, member: discord.Member, reason=None):
     await member.ban(reason=reason)
