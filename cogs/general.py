@@ -20,7 +20,7 @@ class General(commands.Cog):
     )
     embed.add_field(
       name="Novi version",
-      value="v0.2.0",
+      value="v0.2.3",
       inline=True
     )
 
