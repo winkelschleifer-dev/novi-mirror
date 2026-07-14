@@ -15,7 +15,7 @@ class Moderation(commands.Cog):
     await member.timeout(time_unformatted, reason=reason)
     await ctx.send(f"{member.display_name} was muted for {time}. Reason: {reason}")
 
-  @commands.check(isAdmin)
+  @commands.check(utils.rolechecks.isAdmin)
   @commands.command(help="Kicks a user")
   async def kick(self, ctx, member: discord.Member, reason=None):
     await member.kick(reason=reason)
@@ -27,7 +27,7 @@ class Moderation(commands.Cog):
     await member.ban(reason=reason)
     await ctx.send(f"{member.display_name} was banned. {reason}")
 
-  @commands.check(isOwner)
+  @commands.check(utils.rolechecks.isOwner)
   @commands.command(help="Unbans a user")
   async def unban(self, ctx, userid: str):
     user = await self.bot.fetch_user(userid)
