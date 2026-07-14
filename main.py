@@ -30,7 +30,7 @@ async def on_ready():
 
 async def load_cogs():
     await bot.load_extension("cogs.general")
-    #await bot.load_extension("cogs.moderation")
+    await bot.load_extension("cogs.moderation")
     await bot.load_extension("cogs.fun")
 
 
