@@ -26,6 +26,30 @@ class General(commands.Cog):
 
     await ctx.send(embed=embed)
 
+  @commands.command(help="Lists project repos")
+  async def repos(self, ctx):
+    embed = discord.Embed(
+      title="Project repos",
+      color=0xfff600
+    )
+    embed.add_field(
+      name="Lang repo",
+      value="https://codeberg.org/nova-lang/nova/",
+      inline=True
+    )
+    embed.add_field(
+      name="Novi repo",
+      value="https://codeberg.org/nova-lang/novi/",
+      inline=True
+    )
+    embed.add_field(
+      name="Website repo",
+      value="https://codeberg.org/nova-lang/pages/",
+      inline=True
+    )
+
+    await ctx.send(embed=embed)
+
   
 async def setup(bot):
   await bot.add_cog(General(bot))
