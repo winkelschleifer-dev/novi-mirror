@@ -21,6 +21,7 @@ Bot's prefix is `n!`.
 **General**:
 - ping - gets Novi's brain delay.
 - about - misc info about the bot.
+- repos - list project repos
 - help - shows info about the commands.
 
 
